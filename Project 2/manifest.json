@@ -1,0 +1,26 @@
+{
+    "name": "The Murdoch Group",
+    "short_name": "Murdoch Group",
+    "description": "Professional security solutions for residential, commercial, and industrial clients.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1a1a1a",
+    "icons": [
+        {
+            "src": "/images/murdoch-logo3.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/images/murdoch-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "orientation": "any",
+    "categories": ["business", "security", "professional services"],
+    "lang": "en-US",
+    "dir": "ltr",
+    "prefer_related_applications": false
+} 

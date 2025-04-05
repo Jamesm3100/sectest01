@@ -1,84 +1,417 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="description" content="Comprehensive security solutions for residential, commercial, and industrial clients. Expert protection tailored to your needs.">
-            <title>Comprehensive Security Solutions</title>
-            <link rel="stylesheet" href="style.css">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-        </head> 
-    <body>
-        <header>
-            <h1>Murdoch Group Security Consulting</h1>
-            <p>Protecting Your World: Residential, Commercial, Industrial.</p>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#residential">Residential</a></li>
-                <li><a href="#commercial">Commercial</a></li>
-                <li><a href="#industrial">Industrial</a></li>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Murdoch Group - Your trusted partner in comprehensive security solutions for residential, commercial, and industrial clients.">
+    <meta name="keywords" content="security solutions, residential security, commercial security, industrial security, security consulting, New Zealand security, Waikato security">
+    <meta name="author" content="The Murdoch Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Murdoch Group">
+    <link rel="apple-touch-icon" href="images/murdoch-logo.png">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="The Murdoch Group - Security Solutions">
+    <meta property="og:description" content="Your trusted partner in comprehensive security solutions for residential, commercial, and industrial clients.">
+    <meta property="og:image" content="https://themurdochgroup.com/images/og-image.jpg">
+    <meta property="og:url" content="https://themurdochgroup.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Murdoch Group - Security Solutions">
+    <meta name="twitter:description" content="Your trusted partner in comprehensive security solutions.">
+    <meta name="twitter:image" content="https://themurdochgroup.com/images/twitter-card.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://themurdochgroup.com">
+    
+    <title>The Murdoch Group - Security Solutions</title>
+    <link rel="icon" type="image/x-icon" href="images/murdoch-logo3.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SecurityService",
+        "name": "The Murdoch Group",
+        "description": "Comprehensive security solutions for residential, commercial, and industrial clients.",
+        "url": "https://themurdochgroup.com",
+        "logo": "https://themurdochgroup.com/images/murdoch-logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Waikato",
+            "addressCountry": "NZ"
+        },
+        "sameAs": [
+            "https://facebook.com/themurdochgroup",
+            "https://linkedin.com/company/themurdochgroup"
+        ]
+    }
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/murdoch-logo.png" alt="The Murdoch Group Logo" class="logo-img" width="180" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Products & Services</a>
+                    <div class="dropdown-content">
+                        <a href="services.html#residential">Residential Security</a>
+                        <a href="services.html#commercial">Commercial Security</a>
+                        <a href="services.html#industrial">Industrial Security</a>
+                        <a href="services.html#consultation">Security Consultation</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="connect-btn">Connect</a></li>
+                <li class="search-container">
+                    <div class="search-wrapper">
+                        <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
+                        <button class="search-button" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="search-results"></div>
+                    </div>
+                </li>
+                <li class="theme-toggle-container">
+                    <label class="theme-toggle" aria-label="Toggle dark mode">
+                        <input type="checkbox" class="theme-toggle-input">
+                        <span class="theme-toggle-slider">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </span>
+                    </label>
+                </li>
             </ul>
-        </nav>
-        <main>
-            <section id="overview" class="hero">
-                <h2>Your Trusted Security Partner</h2>
-                <p>In an uncertain world, robust security isn't a luxury—it's essential. We provide tailored, state-of-the-art security solutions designed to protect what matters most to you, whether it's your home, business, or industrial facility.</p>
-                <img src="images/hero-security.jpg" alt="Abstract graphic representing security and protection" class="hero-image">
-            </section>
-            <section id="residential">
-                <h2>Residential Security</h2>
-                <p>Secure your home and family with our intuitive and effective residential solutions:</p>
+        </div>
+    </nav>
+
+    <header>
+        <h1>The Murdoch Group</h1>
+        <p>Your Trusted Security Partner</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/hero-security.jpg" alt="Security Solutions" class="hero-image" width="1200" height="600">
+        </section>
+
+        <section id="residential">
+            <h2>Residential Security</h2>
+            <p>Protecting your home and family with advanced security solutions.</p>
+            <div class="service-grid">
                 <div class="service-card">
-                    <img src="images/residential-camera.jpg" alt="Modern smart home security camera" class="service-image">
-                    <h3>Smart Home Security</h3>
-                    <p>Integrated alarm systems, smart locks, doorbell cameras, and 24/7 monitoring options provide peace of mind, accessible from anywhere via your smartphone.</p>
+                    <img src="images/residential-camera.jpg" alt="CCTV Installation" class="service-image" loading="lazy" width="400" height="300">
+                    <h3>CCTV Installation</h3>
+                    <p>State-of-the-art surveillance systems for your home.</p>
                 </div>
                 <div class="service-card">
-                    <img src="images/residential-safety.jpg" alt="Smoke and carbon monoxide detector" class="service-image">
-                    <h3>Life Safety Systems</h3>
-                    <p>Protect your family from more than just intrusion with integrated smoke, heat, and carbon monoxide detectors, ensuring comprehensive safety.</p>
+                    <img src="images/residential-safety.jpg" alt="Safety Solutions" class="service-image" loading="lazy" width="400" height="300">
+                    <h3>Safety Solutions</h3>
+                    <p>Comprehensive safety measures for your property.</p>
                 </div>
-            </section>
-            <section id="commercial">
-                <h2>Commercial Security</h2>
-                <p>Protect your assets, employees, and customers with scalable business security:</p>
+            </div>
+        </section>
+
+        <section id="commercial">
+            <h2>Commercial Security</h2>
+            <p>Securing your business with professional security systems.</p>
+            <div class="service-grid">
                 <div class="service-card">
-                    <img src="images/commercial-access.jpg" alt="Commercial access control system keypad" class="service-image">
+                    <img src="images/commercial-access.jpg" alt="Access Control" class="service-image" loading="lazy" width="400" height="300">
                     <h3>Access Control</h3>
-                    <p>Manage who enters your premises with key card systems, biometric scanners, and detailed entry logs. Restrict access to sensitive areas and track movement.</p>
+                    <p>Advanced access management for your business.</p>
                 </div>
                 <div class="service-card">
-                    <img src="images/commercial-cctv.jpg" alt="High-definition commercial surveillance camera" class="service-image">
-                    <h3>Advanced Surveillance</h3>
-                    <p>High-definition CCTV cameras, network video recorders (NVRs), and intelligent video analytics deter crime and provide crucial evidence when needed.</p>
+                    <img src="images/commercial-cctv.jpg" alt="CCTV Systems" class="service-image" loading="lazy" width="400" height="300">
+                    <h3>CCTV Systems</h3>
+                    <p>Professional surveillance solutions for businesses.</p>
                 </div>
-            </section>
-            <section id="industrial">
-                <h2>Industrial & Critical Infrastructure</h2>
-                <p>Robust solutions for large-scale sites and high-risk environments:</p>
+            </div>
+        </section>
+
+        <section id="industrial">
+            <h2>Industrial Security</h2>
+            <p>Specialized security solutions for industrial facilities.</p>
+            <div class="service-grid">
                 <div class="service-card">
-                    <img src="images/industrial-perimeter.jpg" alt="Industrial site perimeter fence with security sensors" class="service-image">
-                    <h3>Perimeter Protection</h3>
-                    <p>Secure vast areas with advanced fencing solutions, thermal cameras, radar detection, and automated alerts for early intrusion detection.</p>
+                    <img src="images/industrial-perimeter.jpg" alt="Perimeter Security" class="service-image" loading="lazy" width="400" height="300">
+                    <h3>Perimeter Security</h3>
+                    <p>Comprehensive perimeter protection systems.</p>
                 </div>
                 <div class="service-card">
-                    <img src="images/industrial-monitoring.jpg" alt="Security operations center monitoring multiple video feeds" class="service-image">
-                    <h3>Centralized Monitoring</h3>
-                    <p>Integrated systems feed into our Security Operations Co-ordination Centre (SOCC) for real-time monitoring, incident management, and coordinated response with physical security contractors and Police.</p>
+                    <img src="images/industrial-monitoring.jpg" alt="Monitoring Systems" class="service-image" loading="lazy" width="400" height="300">
+                    <h3>Monitoring Systems</h3>
+                    <p>24/7 monitoring solutions for industrial sites.</p>
                 </div>
-            </section>
-            <section id="consultation">
-                <h2>Request a Consultation</h2>
-                <p>Every security need is unique. Contact us today for a professional assessment and a tailored security proposal designed specifically for your requirements.</p>
-                <a href="contact.html" class="cta-button">Get Started</a> </section>
-            </main>
-            <footer>
-                <p>&copy; 2025 The Murdoch Group. Security, Refined.</p>
-                <p>Serving Tamahere, Waikato, and surrounding regions.</p> 
-            </footer>
-    </body>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Secure Your Space?</h2>
+            <p>Contact us today for a comprehensive security assessment.</p>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The Murdoch Group provided exceptional security solutions for our business. Their professional approach and attention to detail gave us peace of mind."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/client1.jpg" alt="John Smith" width="60" height="60">
+                        <div class="testimonial-author-info">
+                            <h4>John Smith</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Outstanding service from start to finish. The team at Murdoch Group went above and beyond to ensure our security needs were met."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/client2.jpg" alt="Sarah Johnson" width="60" height="60">
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Property Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Professional, reliable, and efficient. The security systems installed by Murdoch Group have significantly improved our facility's security."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/client3.jpg" alt="Michael Brown" width="60" height="60">
+                        <div class="testimonial-author-info">
+                            <h4>Michael Brown</h4>
+                            <p>Facility Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What types of security solutions do you offer?</h3>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of security solutions including CCTV systems, access control, alarm systems, and security consulting services for residential, commercial, and industrial clients.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I get started with your services?</h3>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Getting started is easy! Simply contact us through our website or call us directly. We'll schedule a consultation to assess your security needs and provide a tailored solution.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are your security systems monitored 24/7?</h3>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer 24/7 monitoring services for all our security systems. Our monitoring center is staffed around the clock to ensure immediate response to any security events.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest security insights and updates.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- Client Portal Section -->
+        <section class="client-portal">
+            <div class="portal-header">
+                <h2>Client Portal</h2>
+                <p>Access your security systems and account information</p>
+            </div>
+            <div class="portal-grid">
+                <div class="portal-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Dashboard</h3>
+                    <p>Monitor your security systems in real-time</p>
+                </div>
+                <div class="portal-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Reports</h3>
+                    <p>Access security reports and analytics</p>
+                </div>
+                <div class="portal-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Settings</h3>
+                    <p>Manage your security preferences</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog-section">
+            <h2>Latest Updates</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="images/blog1.jpg" alt="Security Tips" class="blog-image" width="300" height="200">
+                    <div class="blog-content">
+                        <div class="blog-date">March 15, 2024</div>
+                        <h3 class="blog-title">Essential Security Tips for Your Home</h3>
+                        <p class="blog-excerpt">Learn how to enhance your home security with these practical tips and best practices.</p>
+                        <a href="blog/home-security-tips.html" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="images/blog2.jpg" alt="Business Security" class="blog-image" width="300" height="200">
+                    <div class="blog-content">
+                        <div class="blog-date">March 10, 2024</div>
+                        <h3 class="blog-title">Business Security in 2024</h3>
+                        <p class="blog-excerpt">Discover the latest trends and technologies in business security for 2024.</p>
+                        <a href="blog/business-security-2024.html" class="blog-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <img src="images/murdoch-logo.png" alt="The Murdoch Group Logo" width="180" height="40">
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Products & Services</h4>
+                            <ul>
+                                <li><a href="services.html#residential">Residential Security</a></li>
+                                <li><a href="services.html#commercial">Commercial Security</a></li>
+                                <li><a href="services.html#industrial">Industrial Security</a></li>
+                                <li><a href="services.html#consultation">Security Consultation</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="index.html">Overview</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Connect</h4>
+                            <div class="footer-social">
+                                <a href="https://facebook.com/themurdochgroup" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
+                                    <i class="fab fa-facebook social-icon"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/themurdochgroup" target="_blank" rel="noopener" aria-label="Connect with us on LinkedIn">
+                                    <i class="fab fa-linkedin social-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-copyright">
+                    &copy; 2025 The Murdoch Group. All rights reserved.
+                </div>
+                <div class="footer-regulatory">
+                    <a href="https://www.pspl.org.nz" target="_blank" rel="noopener">Private Security Personnel Licensing Authority</a>
+                    <a href="https://www.worksafe.govt.nz" target="_blank" rel="noopener">WorkSafe New Zealand</a>
+                    <img src="images/pspl-logo.png" alt="PSPL Logo" width="100" height="30">
+                    <img src="images/worksafe-logo.png" alt="WorkSafe Logo" width="100" height="30">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-button" aria-label="Open chat">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <h3>Live Chat</h3>
+                <button class="chat-close" aria-label="Close chat">×</button>
+            </div>
+            <div class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." aria-label="Chat message">
+                <button aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        <div>
+            <button class="cookie-accept">Accept</button>
+            <button class="cookie-decline">Decline</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
